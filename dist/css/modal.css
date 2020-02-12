@@ -49,7 +49,7 @@
       .modal .modal-content #modal-closer:focus {
         outline: none; }
     .modal .modal-content h2 {
-      font-size: 2rem;
+      font-size: 1.3rem;
       font-family: 'Source Sans Pro', sans-serif;
       font-weight: regular;
       letter-spacing: 2px;
