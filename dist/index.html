@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/dce46299a0.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <title>How's the weather?</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <button id="modal-opener"><i id="change-location-btn" class="fas fa-location-arrow"></i></button>
+      <h1 id="city">Dayton</h1>
+      <span id="units">F / C</h3>
+    </header>
+    <div class="w-content">
+      <img id="w-icon">
+      <ul id="w-data">
+        <li id="w-feels-like">35</li>
+        <li id="w-temperature">40</li>
+        <li id="w-wind">2 mph</li>
+      </ul>
+      <h2 id="w-description">Partly cloudy</h3>
+    </div>
+  </div>
+
+  <div class="modal" style="display: none">
+    <div class="overlay"></div>
+    <div class="modal-content">
+      <button id="modal-closer"><i id="close-modal-btn" class="fas fa-times"></i></button>
+      <h2>Change Location</h2>
+      <form id="change-location-form">
+        <input type="text" name="city" class="text-input" placeholder="City">
+        <input type="text" name="state" class="text-input" placeholder="State or Province">
+        <input type="submit" value="GO" id="modal-submit">
+      </form>
+    </div>
+  </div>
+
+  <script src="js/weather.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/modal.js"></script>
+</body>
+</html>
