@@ -1,18 +1,11 @@
-#modal-opener {
-  border: none;    
-  &:focus {
-      outline: none;
-    }
-
-  #change-location-btn {
-    font-size: 2rem;
-    color: red;
-    transition: color .2s ease-out;
-    
-    &:hover {
-      cursor: pointer;
-      color: blue;
-    }
+#change-location-btn {
+  font-size: 1.3rem;
+  color: red;
+  transition: color .2s ease-out;
+  
+  &:hover {
+    cursor: pointer;
+    color: blue;
   }
 }
 
