@@ -95,6 +95,10 @@
         &:hover {
           background: blue;
           cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
         }
       }
     }

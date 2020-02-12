@@ -79,3 +79,5 @@
         .modal .modal-content form #modal-submit:hover {
           background: blue;
           cursor: pointer; }
+          .modal .modal-content form #modal-submit:hover:focus {
+            outline: none; }
