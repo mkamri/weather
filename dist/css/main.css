@@ -55,4 +55,6 @@ header {
       align-items: space-between;
       border: 1px black solid;
       width: 4rem;
-      height: 4rem; }
+      height: 4rem;
+      font-size: 1.5rem;
+      text-align: center; }
