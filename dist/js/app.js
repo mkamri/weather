@@ -1,4 +1,12 @@
+// Init UI
+const ui = new UI();
+
+// Init weather
 const weather = new Weather('Dayton', 'Ohio');
+
+
 weather.getWeather()
-  .then(res => console.log(res))
+  .then(results => {
+    ui.paint(results);
+  })
   .catch(err => console.log(err));
