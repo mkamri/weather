@@ -6,18 +6,10 @@ class Weather {
     this.units = 'imperial';
   };
 
-  async getWeather(){
+  async getWeather(units){
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.state}&appid=${this.apiKey}&units=${units}`);
     const responseData = await response.json();
     return responseData;
-  }
-
-  changeUnits() {
-    if(this.units === 'imperial') {
-      this.units = 'metric'
-    } else if (this.units === 'metric') {
-      this.units = 'imperial';
-    }
   }
 
   changeLocation(newCity, newState) {
