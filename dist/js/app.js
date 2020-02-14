@@ -2,7 +2,7 @@
 const ui = new UI();
 
 // Init weather
-const weather = new Weather('Dayton', 'Ohio');
+const weather = new Weather('Tokyo', 'Japan');
 
 // Set units to default (imperial)
 let units = 'imperial';
