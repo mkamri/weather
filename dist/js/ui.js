@@ -10,7 +10,7 @@ class UI {
 
   paint(result){
     this.city.textContent = result.name;
-    this.unitsSwitch(units);
+    this.unitsSwitch(weather.units);
     this.icon.src = `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`;
     this.feelsLike.textContent = `${result.main.feels_like.toFixed(1)}\u00B0`;
     this.temperature.textContent = `${result.main.temp.toFixed(1)}\u00B0`;

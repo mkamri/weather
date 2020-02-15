@@ -5,12 +5,12 @@ const ui = new UI();
 const weather = new Weather();
 
 // Set units to default (imperial)
-let units = 'imperial';
+let units = weather.units;
 
 // Set default location
 weather.changeLocation('Tokyo', 'Japan');
 
-// Call innitial get weather function
+// Call innitial get weather function (below)
 getWeather(units);
 
 
@@ -35,3 +35,17 @@ function getWeather(units) {
     .catch(err => console.log(err));
 }
 
+// Change location function
+const form = document.getElementById('change-location-form');
+
+form.addEventListener('submit', (e) => {
+  const cityInputContent = document.getElementById('text-input-city').value;
+  const stateInputContent = document.getElementById('text-input-state').value;
+  if(cityInputContent !='' && stateInputContent != '') {
+    weather.changeLocation(cityInputContent, stateInputContent);
+    getWeather(units);
+    document.querySelector('.modal').style.display = 'none';
+  }
+
+  e.preventDefault();
+})
