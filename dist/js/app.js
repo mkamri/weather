@@ -2,13 +2,19 @@
 const ui = new UI();
 
 // Init weather
-const weather = new Weather('Tokyo', 'Japan');
+const weather = new Weather();
 
 // Set units to default (imperial)
 let units = 'imperial';
 
-// Change units function
+// Set default location
+weather.changeLocation('Tokyo', 'Japan');
 
+// Call innitial get weather function
+getWeather(units);
+
+
+// Change units function
 document.getElementById('w-units').addEventListener('click', () => {
     if(units === 'imperial') {
       units = 'metric';
@@ -20,7 +26,6 @@ document.getElementById('w-units').addEventListener('click', () => {
     console.log(units);
 });
 
-
 // Get weather function
 function getWeather(units) {
   weather.getWeather(units)
@@ -30,5 +35,3 @@ function getWeather(units) {
     .catch(err => console.log(err));
 }
 
-// Call function
-getWeather(units);

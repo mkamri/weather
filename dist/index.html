@@ -14,14 +14,14 @@
   <div class="container">
     <header>
       <button id="modal-opener"><i id="change-location-btn" class="fas fa-location-arrow"></i></button>
-      <h1 id="w-city">Tokyo</h1>
+      <h1 id="w-city"></h1>
       <button id="w-units"><span id="w-imperial">F</span> / <span id="w-metric">C</span></button>
     </header>
     <div id="w-content">
       <img id="w-icon">
       <ul id="w-data">
         <li>feels like <span id="w-feels-like"></span></li>
-        <li id="w-temperature">40</li>
+        <li id="w-temperature"></li>
         <li>wind <span id="w-wind"></span></li>
       </ul>
       <h2 id="w-description">Partly cloudy</h3>
@@ -34,8 +34,8 @@
       <button id="modal-closer"><i id="close-modal-btn" class="fas fa-times"></i></button>
       <h2>Change Location</h2>
       <form id="change-location-form">
-        <input type="text" name="city" class="text-input" placeholder="City">
-        <input type="text" name="state" class="text-input" placeholder="State or Province">
+        <input type="text" name="city" id="text-input-city" placeholder="City">
+        <input type="text" name="state" id="text-input-state" placeholder="State or Province">
         <input type="submit" value="GO" id="modal-submit">
       </form>
     </div>
