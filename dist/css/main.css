@@ -5,6 +5,9 @@
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 2px; }
 
+body {
+  background: #f5f3ed; }
+
 .container {
   top: 50%;
   left: 50%;
@@ -23,7 +26,8 @@ header {
   margin-bottom: 2rem; }
   header #modal-opener {
     border: none;
-    width: 4rem; }
+    width: 4rem;
+    background: none; }
     header #modal-opener:focus {
       outline: none; }
   header h1 {

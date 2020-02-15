@@ -10,8 +10,8 @@ class UI {
 
   paint(result){
     this.city.textContent = result.name;
-    this.unitsSwitch(units);
-    this.icon.src = `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`;
+    this.unitsSwitch(units); //Paints the units the correct color innitially
+    this.iconFinder(result);
     this.feelsLike.textContent = `${result.main.feels_like.toFixed(1)}\u00B0`;
     this.temperature.textContent = `${result.main.temp.toFixed(1)}\u00B0`;
     this.wind.textContent = `${result.wind.speed.toFixed(1)}`;
@@ -28,5 +28,31 @@ class UI {
       imperialStyle.color = "#D3D3D3";
       metricStyle.color = "#000000";
     }
+  }
+
+  iconFinder(result) {
+    // List of correlations between fontawesome icons and API icons
+    const iconList = {
+      '01d': 'fas fa-sun',
+      '01n': 'fas fa-moon',
+      '02d': 'fas fa-cloud-sun',
+      '02n': 'fas fa-cloud-moon',
+      '03d': 'fas fa-cloud',
+      '03n': 'fas fa-cloud',
+      '04d': 'fas fa-cloud',
+      '04n': 'fas fa-cloud',
+      '09d': 'fas fa-cloud-rain',
+      '09n': 'fas fa-cloud-rain',
+      '10d': 'fas fa-cloud-sun-rain',
+      '10n': 'fas fa-cloud-moon-rain',
+      '11d': 'fas fa-bolt',
+      '11n': 'fas fa-bolt',
+      '13d': 'far fa-snowflake',
+      '13n': 'far fa-snowflake',
+      '50d': 'fas fa-smog',
+      '50n': 'fas fa-smog'
+    };
+    // Assign icon class name to the correlating fontawesome icon class
+    this.icon.className = `${iconList[result.weather[0].icon]}`;
   }
 };

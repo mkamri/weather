@@ -6,6 +6,10 @@
   letter-spacing: 2px;
 }
 
+body {
+  background: #f5f3ed;
+}
+
 .container {
   top: 50%;
   left: 50%;
@@ -27,6 +31,7 @@ header {
   #modal-opener {
   border: none;
   width: 4rem;
+  background: none;
   &:focus {
       outline: none;
     }
