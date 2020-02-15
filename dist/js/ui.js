@@ -15,6 +15,7 @@ class UI {
     this.feelsLike.textContent = `${result.main.feels_like.toFixed(1)}\u00B0`;
     this.temperature.textContent = `${result.main.temp.toFixed(1)}\u00B0`;
     this.wind.textContent = `${result.wind.speed.toFixed(1)}`;
+    this.description.textContent = `${result.weather[0].description}`;
   };
 
   unitsSwitch(units){
