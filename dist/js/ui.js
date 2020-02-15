@@ -8,6 +8,7 @@ class UI {
     this.description = document.getElementById('w-description');
   }
 
+  // Paints the data from API into the UI
   paint(result){
     this.city.textContent = result.name;
     this.unitsSwitch(units); //Paints the units the correct color innitially
