@@ -1,0 +1,16 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "A simple app for getting the weather, hand-coded with vanilla JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o dist/css"
+  },
+  "author": "mkamri",
+  "license": "ISC",
+  "dependencies": {
+    "cities.json": "^1.1.5",
+    "node-sass": "^4.13.1"
+  }
+}

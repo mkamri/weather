@@ -56,4 +56,37 @@ class UI {
     // Assign icon class name to the correlating fontawesome icon class
     this.icon.className = `${iconList[result.weather[0].icon]}`;
   }
+
+  colorize(result) {
+    const iconList = {
+      '01d': 'peach',
+      '01n': 'navy',
+      '02d': 'peach',
+      '02n': 'navy',
+      '03d': 'babyBlue',
+      '03n': 'navy',
+      '04d': 'babyBlue',
+      '04n': 'navy',
+      '09d': 'babyBlue',
+      '09n': 'plum',
+      '10d': 'plum',
+      '10n': 'plum',
+      '11d': 'plum',
+      '11n': 'slate',
+      '13d': 'babyBlue',
+      '13n': 'slate',
+      '50d': 'heather',
+      '50n': 'slate'
+    };
+  }
 };
+
+/**
+ * 
+ * Make a function called colorize
+ * let that function determine colorScheme based on icon number
+ * pass colorScheme through a method is in js.colorize
+ * That method colorizes the ui based on the colorScheme determined here
+ * That method also has a default colorization in case there is an error
+ * 
+ */
