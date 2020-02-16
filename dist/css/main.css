@@ -81,11 +81,10 @@ header {
   justify-content: space-evenly; }
   #w-content #w-icon {
     font-size: 13rem;
-    text-shadow: 1px 1px 5px #8b8b8b;
-    margin: 3rem 0; }
+    text-shadow: 1px 1px 5px #8b8b8b; }
   #w-content #w-data {
     list-style: none;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -113,8 +112,11 @@ header {
   .container {
     width: 97%;
     height: 99%; }
-  #w-content #w-icon {
-    font-size: 10rem; }
+  #w-content {
+    padding-top: 2rem;
+    justify-content: center; }
+    #w-content #w-icon {
+      font-size: 10rem; }
   li {
     padding-top: 5rem; }
   #temperature {

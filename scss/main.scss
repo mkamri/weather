@@ -105,12 +105,11 @@ header {
   #w-icon {
     font-size: 13rem;
     text-shadow: 1px 1px 5px #8b8b8b;
-    margin: 3rem 0;
   }
 
   #w-data {
     list-style: none;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -155,6 +154,8 @@ header {
   }
 
   #w-content {
+    padding-top: 2rem;
+    justify-content: center;
     #w-icon {
       font-size: 10rem;
     }
