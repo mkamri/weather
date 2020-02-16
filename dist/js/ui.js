@@ -6,35 +6,44 @@ class UI {
     this.temperature = document.getElementById('w-temperature');
     this.wind = document.getElementById('w-wind');
     this.description = document.getElementById('w-description');
+    this.colorScheme;
   }
 
   // Paints the data from API into the UI
   paint(result){
     this.city.textContent = result.name;
-    this.unitsSwitch(units); //Paints the units the correct color innitially
+    this.unitsSwitch(units); //Paints the units bar the correct color innitially
     this.iconFinder(result);
     this.feelsLike.textContent = `${result.main.feels_like.toFixed(1)}\u00B0`;
     this.temperature.textContent = `${result.main.temp.toFixed(1)}\u00B0`;
     this.wind.textContent = `${result.wind.speed.toFixed(1)}`;
     this.description.textContent = `${result.weather[0].description}`;
+    this.colorTheme(result); // assigns a color scheme to the variable
   };
 
+  // Changes units from imperial <--> metric
   unitsSwitch(units){
-    const imperialStyle = document.getElementById('w-imperial').style;
-    const metricStyle = document.getElementById('w-metric').style;
+    const imperialStyle = document.getElementById('w-imperial');
+    const metricStyle = document.getElementById('w-metric');
+    const unitsButton = document.getElementById('w-units');
 
     if (units === 'imperial'){
-      metricStyle.color = "#D3D3D3";
-      imperialStyle.color = "#000000";
+      metricStyle.style.color = "#666666";
+      metricStyle.style.borderBottomColor = "#f7f4ec00";
+      imperialStyle.style.color = "#f7f4ec";
+      imperialStyle.style.borderBottomColor = "#f7f4ec";
     } else if (units === 'metric'){
-      imperialStyle.color = "#D3D3D3";
-      metricStyle.color = "#000000";
+      imperialStyle.style.color = "#666666";
+      imperialStyle.style.borderBottomColor = "#f7f4ec00";
+      metricStyle.style.color = "#f7f4ec";
+      metricStyle.style.borderBottomColor = "#f7f4ec";
     }
   }
 
+  // Gets fontawesome icons instead of standard API icons
   iconFinder(result) {
     // List of correlations between fontawesome icons and API icons
-    const iconList = {
+    const weatherIconList = {
       '01d': 'fas fa-sun',
       '01n': 'fas fa-moon',
       '02d': 'fas fa-cloud-sun',
@@ -55,11 +64,12 @@ class UI {
       '50n': 'fas fa-smog'
     };
     // Assign icon class name to the correlating fontawesome icon class
-    this.icon.className = `${iconList[result.weather[0].icon]}`;
+    this.icon.className = `${weatherIconList[result.weather[0].icon]}`;
   }
 
-  colorize(result) {
-    const iconList = {
+  // Changes UI colors based on current weather
+  colorTheme(result) {
+    const colorIconList = {
       '01d': 'peach',
       '01n': 'navy',
       '02d': 'peach',
@@ -79,15 +89,10 @@ class UI {
       '50d': 'heather',
       '50n': 'slate'
     };
+    this.colorScheme = `${colorIconList[result.weather[0].icon]}`;
+
+    //Init colorize with the correct color theme and paint that theme
+    const colorize = new Colorize(this.colorScheme);
+    colorize.paint();
   }
 };
-
-/**
- * 
- * Make a function called colorize
- * let that function determine colorScheme based on icon number
- * pass colorScheme through a method is in js.colorize
- * That method colorizes the ui based on the colorScheme determined here
- * That method also has a default colorization in case there is an error
- * 
- */

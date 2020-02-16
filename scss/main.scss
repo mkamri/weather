@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #f5f3ed;
+  background: #f7f4ec;
 }
 
 .container {
@@ -15,11 +15,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  border: 1px solid black;
-  width: 20rem;
+  width: 35rem;
+  height: 80%;
   display: flex;
   flex-direction: column;
   padding: .7rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #666666;
+
+  background: #ff7e5f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #feb47b, #ff7e5f);
+  background: linear-gradient(to top, #feb47b, #ff7e5f);
 }
 
 header {
@@ -37,14 +43,51 @@ header {
     }
   }
 
+  #change-location-btn {
+    font-size: 1.3rem;
+    color: #f7f4ec;
+    text-shadow: 1px 1px 1px #666666;
+    transition: color .2s ease-out;
+    transition: text-shadow .2s ease-out;
+    
+    &:hover {
+      cursor: pointer;
+      color: #ffc446;
+      text-shadow: 2px 2px 5px #666666;
+    }
+  }
+
   h1 {
     font-size: 1.5rem;
     text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #f7f4ec;
   }
 
   #w-units {
     font-size: 1.5rem;
     width: 4rem;
+    background: none;
+    border: none;
+    color: #f7f4ec;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    #w-imperial {
+      border-bottom: 5px solid #f7f4ec00;
+      transition: .3s ease-out;
+    }
+
+    #w-metric {
+      border-bottom: 5px solid #f7f4ec00;
+      transition: .3s ease-out;
+    }
   }
 }
 
@@ -78,5 +121,13 @@ header {
       font-size: 1.5rem;
       text-align: center;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
   }
 }
