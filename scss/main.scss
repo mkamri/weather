@@ -52,7 +52,6 @@ header {
     
     &:hover {
       cursor: pointer;
-      color: #ffc446;
       text-shadow: 2px 2px 5px #666666;
     }
   }
@@ -77,6 +76,7 @@ header {
 
     &:hover {
       cursor: pointer;
+      text-shadow: 1px 1px 3px #666666;
     }
 
     #w-imperial {
