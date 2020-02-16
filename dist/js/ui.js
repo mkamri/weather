@@ -28,15 +28,15 @@ class UI {
     const unitsButton = document.getElementById('w-units');
 
     if (units === 'imperial'){
-      metricStyle.style.color = "#666666";
-      metricStyle.style.borderBottomColor = "#f7f4ec00";
-      imperialStyle.style.color = "#f7f4ec";
-      imperialStyle.style.borderBottomColor = "#f7f4ec";
+      metricStyle.style.color = "#ceb4b1";
+      metricStyle.style.borderBottomColor = "#72636100";
+      imperialStyle.style.color = "#726361";
+      imperialStyle.style.borderBottomColor = "#726361";
     } else if (units === 'metric'){
-      imperialStyle.style.color = "#666666";
-      imperialStyle.style.borderBottomColor = "#f7f4ec00";
-      metricStyle.style.color = "#f7f4ec";
-      metricStyle.style.borderBottomColor = "#f7f4ec";
+      imperialStyle.style.color = "#ceb4b1";
+      imperialStyle.style.borderBottomColor = "#72636100";
+      metricStyle.style.color = "#726361";
+      metricStyle.style.borderBottomColor = "#726361";
     }
   }
 
