@@ -7,7 +7,7 @@
 }
 
 body {
-  color: #726361;
+  color: #666172;
   font-size: 1.4rem;
   height: 100vh;
   overflow: hidden;
@@ -83,13 +83,16 @@ header {
 
     #w-imperial {
       border-bottom: 5px solid #f7f4ec00;
-      transition: color .3s ease-out;      transition: text-shadow .3s ease-out;
+      transition: color .3s ease-out;      
+      transition: text-shadow .3s ease-out;
+      transition: border-bottom .5s ease-in;
     }
 
     #w-metric {
       border-bottom: 5px solid #f7f4ec00;
       transition: color .3s ease-out;
       transition: text-shadow .3s ease-out;
+      transition: border-bottom .5s ease-in;
     }
   }
 }
