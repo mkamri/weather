@@ -69,7 +69,9 @@
         font-size: 1.2rem;
         padding: .2rem;
         font-family: 'Source Sans Pro', sans-serif;
-        letter-spacing: 1px; }
+        letter-spacing: 1px;
+        border: #726361 solid 1px;
+        border-radius: 4px; }
       .modal .modal-content form #modal-submit {
         border-radius: 1rem;
         border: #726361 solid 1px;
