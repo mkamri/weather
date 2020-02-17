@@ -12,9 +12,9 @@ body {
   height: 100vh;
   overflow: hidden;
 
-  background: #ff7e5f;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #feb47b, #ff7e5f);
-  background: linear-gradient(to top, #feb47b, #ff7e5f);
+  background: #8f9192;  /* fallback for old browsers */
+  background: -webkit-linear-gradient('to bottom, #8f9192, #b6b9bb, #ffffff');
+  background: linear-gradient('to bottom, #8f9192, #b6b9bb, #ffffff');
 }
 
 .container {
