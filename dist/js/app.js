@@ -32,7 +32,9 @@ function getWeather(units) {
     .then(results => {
       ui.paint(results);
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log(err);
+      })
 }
 
 // Change location function
@@ -41,10 +43,21 @@ const form = document.getElementById('change-location-form');
 form.addEventListener('submit', (e) => {
   const cityInputContent = document.getElementById('text-input-city').value.trim();
   const stateInputContent = document.getElementById('text-input-state').value.trim();
-  if(cityInputContent !='' && stateInputContent != '') {
+  if(cityInputContent !== '' && stateInputContent !== '') {
     weather.changeLocation(cityInputContent, stateInputContent);
-    getWeather(units);
-    document.querySelector('.modal').style.display = 'none';
+    weather.getWeather(units)
+      .then(results => {
+        ui.paint(results);
+        document.querySelector('.modal').style.display = 'none';
+        document.getElementById('error-message').style.display = 'none';
+      })
+      .catch(err => {
+        if (err instanceof TypeError) {
+          document.getElementById('error-message').style.display = 'block';
+        } else {
+        console.log(err);
+        }
+    })
   }
 
   e.preventDefault();

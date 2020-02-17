@@ -38,6 +38,7 @@
       position: absolute;
       align-self: flex-end;
       color: #726361;
+      background: none;
       transition: .2s ease-out;
 
       &:hover {
@@ -55,6 +56,15 @@
       font-weight: regular;
       letter-spacing: 2px;
       margin-bottom: 1rem;
+    }
+
+    #error-message {
+      margin-top: -.8rem;
+      font-size: 1rem;
+      color: #ec4319;
+      background: #f5c2b5;
+      padding: .1rem;
+      border-radius: 4px;
     }
 
     form {
@@ -82,13 +92,16 @@
         letter-spacing: 1px;
         background: none;
         transition: .2s ease-out;
+        &:focus {
+          outline: none;
+        }
+        &:click {
+          outline: none;
+        }
 
         &:hover {
           cursor: pointer;
           box-shadow: 1px 1px 5px #726361;
-          &:focus {
-            outline: none;
-          }
         }
       }
     }

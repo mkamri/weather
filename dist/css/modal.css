@@ -34,6 +34,7 @@
       position: absolute;
       align-self: flex-end;
       color: #726361;
+      background: none;
       transition: .2s ease-out; }
       .modal .modal-content #modal-closer:hover {
         cursor: pointer;
@@ -46,6 +47,13 @@
       font-weight: regular;
       letter-spacing: 2px;
       margin-bottom: 1rem; }
+    .modal .modal-content #error-message {
+      margin-top: -.8rem;
+      font-size: 1rem;
+      color: #ec4319;
+      background: #f5c2b5;
+      padding: .1rem;
+      border-radius: 4px; }
     .modal .modal-content form {
       display: flex;
       flex-direction: column;
@@ -70,8 +78,10 @@
         letter-spacing: 1px;
         background: none;
         transition: .2s ease-out; }
+        .modal .modal-content form #modal-submit:focus {
+          outline: none; }
+        .modal .modal-content form #modal-submit:click {
+          outline: none; }
         .modal .modal-content form #modal-submit:hover {
           cursor: pointer;
           box-shadow: 1px 1px 5px #726361; }
-          .modal .modal-content form #modal-submit:hover:focus {
-            outline: none; }
