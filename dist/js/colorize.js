@@ -32,7 +32,6 @@ class Colorize {
     color: #726361;
     font-size: 1.4rem;
     height: 100vh;
-    overflow: hidden;
 
     background: ${mainColor};
     background: -webkit-linear-gradient(${gradient});
