@@ -39,8 +39,8 @@ function getWeather(units) {
 const form = document.getElementById('change-location-form');
 
 form.addEventListener('submit', (e) => {
-  const cityInputContent = document.getElementById('text-input-city').value;
-  const stateInputContent = document.getElementById('text-input-state').value;
+  const cityInputContent = document.getElementById('text-input-city').value.trim();
+  const stateInputContent = document.getElementById('text-input-state').value.trim();
   if(cityInputContent !='' && stateInputContent != '') {
     weather.changeLocation(cityInputContent, stateInputContent);
     getWeather(units);
