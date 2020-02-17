@@ -8,7 +8,11 @@ const weather = new Weather();
 let units = weather.units;
 
 // Set default location
-weather.changeLocation('Tokyo', 'Japan');
+if (localStorage.getItem('city') === null || localStorage.getItem('state') === null) {
+  weather.changeLocation('Tokyo', 'Japan');
+} else {
+  weather.changeLocation(localStorage.getItem('city'), localStorage.getItem('state'));
+};
 
 // Call innitial get weather function (below)
 getWeather(units);

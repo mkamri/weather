@@ -15,5 +15,7 @@ class Weather {
   changeLocation(newCity, newState) {
     this.city = newCity;
     this.state = newState;
+    localStorage.setItem('city', newCity);
+    localStorage.setItem('state', newState);
   }
 };
