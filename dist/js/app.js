@@ -55,7 +55,8 @@ form.addEventListener('submit', (e) => {
         if (err instanceof TypeError) {
           document.getElementById('error-message').style.display = 'block';
         } else {
-        console.log(err);
+          document.getElementById('error-message').textContent = 'Unknown error: Please refresh and try again.';
+          document.getElementById('error-message').style.display = 'block';
         }
     })
   }
