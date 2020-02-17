@@ -35,8 +35,11 @@
       <h2>Change Location</h2>
       <span id="error-message" style="display: none;">Error: City or state not found.</span>
       <form id="change-location-form">
-        <input type="text" name="city" id="text-input-city" class="text-input" placeholder="City">
-        <input type="text" name="state" id="text-input-state" class="text-input" placeholder="State or Province">
+        <label for="city">City:</label>
+        <input type="text" name="city" id="text-input-city" class="text-input" placeholder="e.g. 'Los Angeles'">
+
+        <label for="state">Region:</label>
+        <input type="text" name="state" id="text-input-state" class="text-input" placeholder="e.g. 'California' or 'US'">
         <input type="submit" value="GO" id="modal-submit">
       </form>
     </div>
