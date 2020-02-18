@@ -1,4 +1,5 @@
 class Colorize {
+  // Get colorScheme from ui.js
   constructor(colorScheme) {
   this.colorScheme = colorScheme;
   };
@@ -7,6 +8,7 @@ class Colorize {
    let gradient; 
    let mainColor; 
 
+    // define colors based on colorScheme
     if (this.colorScheme === 'plum') {
       gradient = 'to bottom, #271550, #2F0743, #440950';
       mainColor = '#271550';
@@ -27,6 +29,7 @@ class Colorize {
      mainColor = '#8f9192';
    }
 
+  // Change body style based on color scheme
    document.querySelector('body').style =
    `  
     color: #726361;

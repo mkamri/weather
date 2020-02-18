@@ -9,10 +9,10 @@ class UI {
     this.colorScheme;
   }
 
-  // Paints the data from API into the UI
+  // Paint the data from API into the UI
   paint(result){
     this.city.textContent = result.name;
-    this.unitsSwitch(units); //Paints the units bar the correct color innitially
+    this.unitsSwitch(units); //Paint the units bar the correct color innitially
     this.iconFinder(result);
     this.feelsLike.textContent = `${result.main.feels_like.toFixed(1)}\u00B0`;
     this.temperature.textContent = `${result.main.temp.toFixed(1)}\u00B0`;
@@ -27,6 +27,7 @@ class UI {
     const metricStyle = document.getElementById('w-metric');
     const unitsButton = document.getElementById('w-units');
 
+    // Switch animation
     if (units === 'imperial'){
       metricStyle.style.color = "#ceb4b1";
       metricStyle.style.borderBottomColor = "#72636100";
