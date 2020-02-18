@@ -1,7 +1,5 @@
-// Init UI
+// Init UI and weather
 const ui = new UI();
-
-// Init weather
 const weather = new Weather();
 
 // Set units to default (imperial)
@@ -45,22 +43,35 @@ function getWeather(units) {
 const form = document.getElementById('change-location-form');
 
 form.addEventListener('submit', (e) => {
+  const errorMessage = document.getElementById('error-message');
+
+  //trim removes accidental whitespace at beginning or end
   const cityInputContent = document.getElementById('text-input-city').value.trim();
   const stateInputContent = document.getElementById('text-input-state').value.trim();
-  if(cityInputContent !== '' && stateInputContent !== '') {
+
+  if(cityInputContent === '' && stateInputContent === '') {
+    errorMessage.style.display = 'block';
+    errorMessage.textContent = 'Please enter a city and region.';
+  } else if(cityInputContent === '' && stateInputContent !== '') {
+    errorMessage.style.display = 'block';
+    errorMessage.textContent = 'Please enter a city name.';
+  } else if (stateInputContent === '' && cityInputContent !== '') {
+    errorMessage.style.display = 'block';
+    errorMessage.textContent = 'Please enter a region name.';
+  } else if(cityInputContent !== '' && stateInputContent !== '') {
     weather.changeLocation(cityInputContent, stateInputContent);
     weather.getWeather(units)
       .then(results => {
         ui.paint(results);
         document.querySelector('.modal').style.display = 'none';
-        document.getElementById('error-message').style.display = 'none';
+        errorMessage.style.display = 'none';
       })
       .catch(err => {
         if (err instanceof TypeError) {
-          document.getElementById('error-message').style.display = 'block';
+          errorMessage.style.display = 'block';
         } else {
-          document.getElementById('error-message').textContent = 'Unknown error: Please refresh and try again.';
-          document.getElementById('error-message').style.display = 'block';
+          errorMessage.textContent = 'Unknown error: Please refresh and try again.';
+          errorMessage.style.display = 'block';
         }
     })
   }
