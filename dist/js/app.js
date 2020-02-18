@@ -49,6 +49,7 @@ form.addEventListener('submit', (e) => {
   const cityInputContent = document.getElementById('text-input-city').value.trim();
   const stateInputContent = document.getElementById('text-input-state').value.trim();
 
+  //error messages for various blank spaces
   if(cityInputContent === '' && stateInputContent === '') {
     errorMessage.style.display = 'block';
     errorMessage.textContent = 'Please enter a city and region.';
@@ -58,6 +59,9 @@ form.addEventListener('submit', (e) => {
   } else if (stateInputContent === '' && cityInputContent !== '') {
     errorMessage.style.display = 'block';
     errorMessage.textContent = 'Please enter a region name.';
+
+
+    // Runs the get weather program if there is content in both boxes
   } else if(cityInputContent !== '' && stateInputContent !== '') {
     weather.changeLocation(cityInputContent, stateInputContent);
     weather.getWeather(units)
